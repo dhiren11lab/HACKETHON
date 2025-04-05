@@ -1,0 +1,80 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 213 31% 91%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 213 31% 91%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --primary: 180 100% 50%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 171 77% 64%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-cyber text-cyber-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  .cyber-grid {
+    background-size: 50px 50px;
+    background-image:
+      linear-gradient(to right, rgba(35, 53, 84, 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(35, 53, 84, 0.1) 1px, transparent 1px);
+  }
+
+  .cyber-card {
+    @apply bg-cyber-secondary border border-cyber-highlight rounded-md overflow-hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .cyber-terminal {
+    @apply font-mono text-sm p-4 bg-cyber-secondary border border-cyber-highlight rounded-md;
+    box-shadow: inset 0 0 10px rgba(5, 217, 232, 0.1);
+  }
+
+  .cyber-glow {
+    text-shadow: 0 0 5px theme('colors.cyber.glow');
+  }
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+}
